@@ -1,4 +1,5 @@
 const pad = document.querySelector("#pad");
+// problem: css-grid creates 16 rows and columns, but all divs are placed in the first row
 
 function getGrid (){
     let gridArray = [];
