@@ -1,5 +1,14 @@
-#pad {
+#container {
     display: grid;
-    grid-template-rows: repeat(16, 1fr);
-    grid-template-columns: repeat(16, 1fr);
+    justify-content: center;
+}
+
+#pad {
+    height: 600px;
+    width: 600px;
+    border-color: red;
+}
+
+.cell {
+    border-radius: 100%;
 }
