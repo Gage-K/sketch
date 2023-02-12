@@ -1,5 +1,4 @@
 const pad = document.querySelector("#pad");
-// problem: css-grid creates 16 rows and columns, but all divs are placed in the first row
 
 function getGrid (){
     let gridArray = [];
@@ -20,7 +19,7 @@ function getGrid (){
         cell.classList.add("cell");
         cell.style.gridRow = row;
         cell.style.gridColumn = col;
-        cell.textContent = i;
+        //cell.textContent = i;
 
         col += 1;
         if (col === rowAmt + 1){
@@ -29,6 +28,13 @@ function getGrid (){
         };
 
         pad.appendChild(cell);
+        cell.addEventListener("mouseenter", (event) => {
+            event.target.style.backgroundColor = "red";
+            
+            setTimeout(() => {
+                event.target.style.backgroundColor = "";
+            }, 2500);
+        });
     };
 
     //console.log(gridArray);
