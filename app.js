@@ -26,8 +26,7 @@ function getGrid (){
         if (col === rowAmt + 1){
             row += 1;
             col = 1;
-        }
-        
+        };
 
         pad.appendChild(cell);
     };
