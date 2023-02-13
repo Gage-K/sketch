@@ -1,6 +1,5 @@
 const container = document.querySelector("#container");
 let pad = document.querySelector("#pad");
-const defaultLoad = pad;
 
 let gridSize = 16; //default size
 
@@ -8,11 +7,7 @@ const sizebtn = document.querySelector("#sizebtn");
 sizebtn.addEventListener('click', () =>{
     let sizePrompt = parseInt(prompt("Enter your grid size: "), 16);
     gridSize = sizePrompt;
-    pad = defaultLoad;
     removeGrid();
-    //pad = document.createElement("div");
-    //ad.setAttribute("#pad");
-    //container.appendChild(pad);
     getGrid(sizePrompt);
 });
 
