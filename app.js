@@ -1,10 +1,23 @@
-const pad = document.querySelector("#pad");
+const container = document.querySelector("#container");
+let pad = document.querySelector("#pad");
+const defaultLoad = pad;
 
-function getGrid (){
-    let gridArray = [];
-    let gridFiller = 1;
+let gridSize = 16; //default size
 
-    let rowAmt = 16;
+const sizebtn = document.querySelector("#sizebtn");
+sizebtn.addEventListener('click', () =>{
+    let sizePrompt = parseInt(prompt("Enter your grid size: "), 16);
+    gridSize = sizePrompt;
+    pad = defaultLoad;
+    removeGrid();
+    //pad = document.createElement("div");
+    //ad.setAttribute("#pad");
+    //container.appendChild(pad);
+    getGrid(sizePrompt);
+});
+
+function getGrid(size){
+    let rowAmt = size;
     let cellAmt = rowAmt * rowAmt;
 
     pad.style.display = 'grid';
@@ -19,6 +32,7 @@ function getGrid (){
         cell.classList.add("cell");
         cell.style.gridRow = row;
         cell.style.gridColumn = col;
+        cell.style.border = '1px solid black'
         //cell.textContent = i;
 
         col += 1;
@@ -40,4 +54,10 @@ function getGrid (){
     //console.log(gridArray);
 };
 
-getGrid();
+function removeGrid(){
+    while(pad.firstChild){
+        pad.removeChild(pad.firstChild);
+    }
+}
+
+getGrid(gridSize);
