@@ -1,8 +1,10 @@
 /* COLOR PALLETTE
+    #806991 - purple
     #073B4C - dark blue
     #118AB2 - light blue
     #06D6A0 - green
     #FFD166 - yellow
+    #F78C6B - orange
     #EF476F - red
 */
 
@@ -10,6 +12,7 @@ body {
     font-family: helvetica, arial, sans-serif;
     background: rgb(6,214,160);
     background: radial-gradient(circle, #06D6A0 0%, #118AB2 100%);
+    color: #073B4C;
 }
 
 #maincontainer {
@@ -44,10 +47,108 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     /* background: linear-gradient(180deg, rgba(74,78,105,1) 0%, rgba(86,90,115,1) 100%);
     border-top-left-radius: 3em;
     border-top-right-radius: 3em; */
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background: transparent;
+    margin-right: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #EF476F;
+    background-color: #EF476F;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    margin-top: -5px;  
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 60px;
+    height: 5px;
+    background-color: #EF476F;
+    border-radius: 3px;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #EF476F;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #EF476F;
+    border-radius: 3px;
+}
+
+input[type=range]::-ms-track {
+    cursor: pointer;
+    background: transparent;
+    background-color: transparent;
+    color: transparent;
+}
+
+#colors {
+    display: flex;
+    align-items: center;
+    height: 12px;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 10px;
+    border: 2px solid #073B4C;
+    border-radius: 15px;
+    box-shadow:1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#colors > div:hover {
+    filter: saturate(50%);
+    transform: scale(1.2, 1.2);
+}
+
+#colors > div {
+    height: 15px;
+    width: 15px;
+    border-radius: 12px;
+    margin-left: 2px;
+    margin-right: 2px;
+    box-shadow:1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    transition: .1s ease-in-out;
+}
+
+#purple {
+    background-color: #806991;
+}
+
+#darkblue {
+    background-color: #073B4C;
+}
+
+#blue {
+    background-color: #118AB2;
+}
+
+#green {
+    background-color: #06D6A0;
+}
+
+#yellow {
+    background-color: #FFD166;
+}
+
+#orange {
+    background-color: #F78C6B;
+}
+
+#red {
+    background-color: #EF476F;
 }
 
 #sizebtn {
@@ -71,7 +172,6 @@ body {
 }
 
 .cell {
-    /* border-radius: 100%; */
     background-color: white;
 }
 
