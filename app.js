@@ -3,13 +3,14 @@ let pad = document.querySelector("#pad");
 
 let gridSize = 16; //default size
 
-const sizebtn = document.querySelector("#sizebtn");
-sizebtn.addEventListener('click', () =>{
-    let sizePrompt = parseInt(prompt("Enter your grid size: "), 16);
-    gridSize = sizePrompt;
+const size = document.querySelector("#size");
+size.addEventListener('change', () => {
+    let gridSize = parseInt(document.getElementById("size").value);
+    console.log(gridSize);
     removeGrid();
-    getGrid(sizePrompt);
-});
+    getGrid(gridSize);
+}
+);
 
 function getGrid(size){
     let rowAmt = size;
@@ -27,7 +28,7 @@ function getGrid(size){
         cell.classList.add("cell");
         cell.style.gridRow = row;
         cell.style.gridColumn = col;
-        cell.style.border = '1px solid black'
+        cell.style.border = '1px solid gray'
         //cell.textContent = i;
 
         col += 1;
